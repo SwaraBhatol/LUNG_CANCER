@@ -37,7 +37,7 @@ for col in categorical_cols:
 X = df.drop('Result', axis=1) ## Separate features and target
 y = df['Result']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Data are splited into 80% Train- 20% test data
 
@@ -55,10 +55,10 @@ precision_baseline = precision_score(y_test, y_pred_baseline)
 recall_baseline = recall_score(y_test, y_pred_baseline)
 f1_baseline = f1_score(y_test, y_pred_baseline)
 
-print({accuracy_baseline:.4}) ## printing the results
-print({precision_baseline:.4})
-print({recall_baseline:.4})
-print({f1_baseline:.4})
+print(accuracy_baseline) ## printing the results
+print(precision_baseline)
+print(recall_baseline)
+print(f1_baseline)
 
 cm_baseline = confusion_matrix(y_test, y_pred_baseline) ##confusion matrix
 plt.figure(figsize=(10, 4))
